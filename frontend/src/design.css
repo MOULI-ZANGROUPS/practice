@@ -1,299 +1,235 @@
-/* General responsive styles */
+
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Noto Sans", sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+}
+
+
+.header {
+  display: flex;
   
-  /* Header styles */
+  align-items: center;
+  height: 100px;
+  background-color: #003366;
+  padding: 10px 20px;
+  
+}
+
+.header-icons {
+  display: flex;
+  flex-grow: 1;
+  align-items: center; 
+}
+
+.header-icons  {
+  margin-left: 10px; 
+}
+
+
+
+.logo{
+  margin-left: 10px;
+  width: 250px;
+  height: 100px;
+}
+
+.header-button {
+  display: flex;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.login,
+.signup {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #00A86B;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login:hover,
+.signup:hover {
+  background-color: #007a50;
+}
+
+
+.carousel-container {
+  width: 90%;
+  margin: 20px auto;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+
+
+.trending-stocks {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.stocks-section {
+  display: flex;
+  gap: 20px;
+}
+
+.stocks-category {
+  flex: 1;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.stocks-category h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.stocks-list {
+  border-top: 1px solid #ddd;
+}
+
+.stock-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.stock-name {
+  display: flex;
+  align-items: center;
+  flex: 2;
+}
+
+.stock-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.stock-price {
+  flex: 1;
+  text-align: right;
+}
+
+.stock-price p {
+  margin: 0;
+}
+
+.stock-price .positive {
+  color: green;
+}
+
+.stock-price .negative {
+  color: red;
+}
+
+.stock-compliance {
+  flex: 1;
+  text-align: center;
+}
+
+.compliance-badge {
+  background: #e0f5e5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #4CAF50;
+}
+
+.compliance-rating {
+  color: #f4c542;
+  font-size: 14px;
+}
+
+.upgrade-lock {
+  text-align: center;
+  padding: 10px;
+  color: #888;
+  font-size: 14px;
+}
+
+.table-headings, .stock-row {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.table-headings {
+  font-weight: bold;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+.heading-name, .stock-name {
+  flex: 2;
+  display: flex;
+  align-items: center;
+}
+
+.heading-price, .stock-price {
+  flex: 1;
+  text-align: right;
+}
+
+.heading-compliance, .stock-compliance {
+  flex: 1;
+  text-align: center;
+}
+
+
+
+
+
+@media (max-width: 768px) {
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    background-color: #003366;
-    padding: 0 5%;
-  }
-  
-  .header-title {
-    color: white;
-    font-size: 1.5rem;
-  }
-  
-  .header-button {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .login,
-  .signup {
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #00A86B;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .login:hover,
-  .signup:hover {
-    background-color: #007a50;
-  }
-  
-  /* Carousel container styles */
-  .carousel-container {
-    width: 90%;
-    margin:20px auto;
-    overflow: hidden;
-    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.15);
-  }
-  
-  .carousel-container img {
-    width: 100%;
-    height: auto;
-    max-height: 600px;
-    object-fit: cover;
-  }
-  
-  /* Stock Search Title */
-  .stock-container {
-        padding: 20px;
-        text-align: center;
-        align-items: center;
-        background-color: #f9f9f9;
-  }
-  
-  .stock-search-title {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 2rem;
-    color: #003366;
-  }
-  
-  /* Search Form */
-  .search-form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-  
-  .search-input {
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  /* Search Button */
-  .search-button {
-    padding: 10px 20px;
-    background-color: #00A86B;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    margin-left: 10px;
-    cursor: pointer;
-  }
-  
-  /* Button Hover Effect */
-  .search-button:hover {
-    background-color: #007a50;
-  }
-  
-  /* Suggestions List */
-  .suggestions {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: white;
-    position: absolute;
-    z-index: 1000;
-    width: 400px;
-  }
-  
-  /* Suggestion Item */
-  .suggestion-item {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .suggestion-item:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Stock Table */
-  .stock-table {
-    width: 70%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  /* Table Headers */
-  .stock-header {
-    background-color: #f4f4f4;
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  /* Table Data Cells */
-  .stock-symbol,
-  .stock-price,
-  .stock-change,
-  .stock-change-percent,
-  .last-updated {
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
-  
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: row;
-      height: auto;
-      padding: 20px;
-    }
-  
-    .header-title {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-  
-    .header-button {
-      gap: 10px;
-    }
-  
-    .login,
-    .signup {
-      padding: 8px 16px;
-      font-size: 0.9rem;
-    }
-  
-    .carousel-container {
-      width: 90%;
-    }
-  
-    .search-input {
-      width: 80%;
-    }
-  
-    .search-form {
-      flex-direction: column;
-    }
-  
-    .search-button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    .suggestions {
-      width: 80%;
-    }
-  
-  }
-  
-  @media (max-width: 480px) {
-    .header-title {
-      font-size: 1.1rem;
-    }
-  
-    .login,
-    .signup {
-      padding: 6px 12px;
-      font-size: 0.8rem;
-    }
-  
-    .stock-search-title {
-      font-size: 1.5rem;
-    }
-  
-    .search-input {
-      padding: 8px;
-    }
-  
-    .search-button {
-      padding: 8px 16px;
-    }
-  }
-  
-  
-  
-  /*Chart Component styles*/
-  .market-container{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: #F5F5F5;
-  }
-  
-  .nifty-chart-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: left;
-  }
-  .chart-components{
-    border-width: 1px;
-    border-style: solid;
-    border-color: #333333;
-    padding-top: 5px;
-    width: 510px;
-  }
-  
-  .range-buttons{
-    display: flex;
     flex-direction: row;
-    justify-content: left;
-    padding-left: 65px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .header-title {
+    font-size: 1.25rem;
     margin-bottom: 10px;
   }
-  
-  .range-buttons button{
-    background-color: transparent;
-    border-style: solid;
-    border-bottom: none;
-    border-color: black;
-    border-top: none;
-    border-left: none;
-    color: #003366;
-    font-weight:bold;
-    
+
+  .header-button {
+    gap: 10px;
   }
-  
-  .range-buttons button:hover{
-    color: #00A86B;
+
+  .login,
+  .signup {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
-  
-  .auth-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   align-items: center;
-    margin-top: 20px;
-    /* background-color: rgba(0, 51, 102, 0.85); */
-    /* color: white; */
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+
+  .carousel-container {
+    width: 90%;
   }
+}
   
-  .auth-components{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.1rem;
   }
+
+  .login,
+  .signup {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
   
-  .auth-components p{
-    font-size: xx-large;
-    font-family: 'Noto Sans-Arabic';
-  }
-  
-  .auth-components button{
-    width: 200px;
-  }
+}

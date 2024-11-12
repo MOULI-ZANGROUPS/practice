@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { forgotPassword } from '../api/auth'; 
-import logo from '../images/ShariaStocks-logo/logo.png'
+import logo from '../images/shariastock logo.png'
 import '../auth.css'
 import {
     Container,
@@ -9,7 +9,6 @@ import {
     Button,
     Typography,
     Box,
-    Link,
     Alert
   } from '@mui/material';
 

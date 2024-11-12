@@ -10,8 +10,7 @@ const PrivacyPolicy = () => {
         <h1 className="privacy-title">Privacy Policy</h1>
         <p className="privacy-description">
           This Privacy Policy outlines how ShariaStock collects, uses, and protects your personal information. 
-          Your privacy is very important to us
-          , and we are committed to safeguarding your data.
+          Your privacy is very important to us, and we are committed to safeguarding your data.
         </p>
 
         <h2 className="privacy-subtitle">Information We Collect</h2>

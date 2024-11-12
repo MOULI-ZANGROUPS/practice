@@ -4,10 +4,11 @@ import '../dashboard.css'; // Import the CSS file
 import { useNavigate, Link } from 'react-router-dom';
 import account from '../images/account-icon.svg';
 import logout from '../images/logout.svg';
+import logo from '../images/shariastock logo.png'
 
 const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false); // For user profile dropdown
-  const [isSidebarOpen, setSidebarOpen] = useState(false); // Sidebar initially hidden
+  
   const [user, setUser] = useState({});
   const navigate = useNavigate(); 
   
@@ -28,21 +29,28 @@ const Header = () => {
     setDropdownOpen((prev) => !prev);
   };
 
-  const toggleSidebar = () => {
-    setSidebarOpen((prev) => !prev);
+  const handleLogout = () => {
+    // Clear user data from localStorage
+    localStorage.removeItem('userEmail');
+    navigate('/');
   };
 
   return (
     <div>
       <nav className="navbar">
         <div className="header-icons">
-          {/* List icon to toggle sidebar */}
-          <i className="fas fa-list" onClick={toggleSidebar}></i>
-          <div className="logo">ShariaStock</div>
+          <img src={logo} alt="logo" className="logo" onClick={() => navigate('/Dashboard')}/>
         </div>
-
+        <div className="header-button">
+          <button onClick={() => navigate('/portfolio')} className="portfolio">
+            Portfolio
+          </button>
+          <button onClick={() => navigate('/watchlist')} className="watchlist">
+            Watchlist
+          </button>
+        </div>
         <div className="user-icon" onClick={toggleDropdown}>
-          <img src={`http://localhost:5000/${user.profilePicture}`} alt="Profile" className="profile-pic" /> {/* Profile Picture */}
+          <img src={user.profilePicture ? `http://localhost:5000/${user.profilePicture}` : account} alt="Profile" className="profile-pic" /> {/* Profile Picture */}
           <div className='user-info'>
           <p>{user.name}</p>
           </div>
@@ -54,16 +62,11 @@ const Header = () => {
       {isDropdownOpen && (
         <div className="profile-dropdown">
           <div className='profile-section'>
-          
           <div className='profile-info'>
           <p className='profile-username'><strong>{user.name}</strong></p>
           <p className='profile-email'>{user.email}</p>
-          
           </div>
-          
           </div>
-          
-          
           <div className='edit-profile-section'>
             <img src={account} alt="account" />
           <Link to="/editprofile"><strong>Profile</strong></Link>
@@ -71,25 +74,11 @@ const Header = () => {
           
           <div className='logout-section'>
             <img src={logout} alt="logout" />
-          <button className="logout-btn">Logout</button>
+          <button className="logout-btn" onClick={handleLogout}>Logout</button>
           </div>
           
         </div>
       )}
-      {isSidebarOpen && (
-          <div className="sidebar">
-            <ul className="sidebar-links">
-              <li><i className="fas fa-tachometer-alt"></i> Dashboard</li>
-              <li><i className="fas fa-eye"></i> Watchlist</li>
-              <li><i className="fas fa-briefcase"></i> Portfolio</li>
-            </ul>
-            <div className="market-overview">
-              <h4>Market Overview</h4>
-              <p>NSE <span className="red">25,0625</span></p>
-              <p>BSE <span className="green">25,0545</span></p>
-            </div>
-          </div>
-        )}
     </div>
   )
 }
