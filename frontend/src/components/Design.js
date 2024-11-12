@@ -9,6 +9,8 @@ import portfolio from '../images/Portfolio.png';
 import { Link } from 'react-router-dom';
 import '../design.css';
 
+
+
 export default function Design() {
   return (
     <div className='contents'>
