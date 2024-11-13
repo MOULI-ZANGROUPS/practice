@@ -70,115 +70,120 @@ const Signup = () => {
                 <img src={logo} alt="logo" />
             </div>
             <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
-          <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: 3 }}>
-            Sign Up
-          </Typography>
-          
-          {error && (
-            <Alert severity="error" sx={{ mb: 2 }}>
-              {error}
-            </Alert>
-          )}
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      // minHeight: '100vh',
+      padding: { xs: '0 20px', sm: '0' },
+      mt: 4, // Add top margin here, adjust value as needed
+    }}
+  >
+    <Paper elevation={3} sx={{ p: 4, width: '100%', maxWidth: '400px' }}>
+      <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: 3 }}>
+        Sign Up
+      </Typography>
 
-          <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="name"
-              label="Name"
-              name="name"
-              autoFocus
-              value={name}
-              onChange={onChange}
-              disabled={loading}
-              autoComplete="name"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              value={email}
-              onChange={onChange}
-              disabled={loading}
-              type="email"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              value={password}
-              onChange={onChange}
-              disabled={loading}
-              autoComplete="new-password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="confirmPassword"
-              label="Confirm Password"
-              type="password"
-              id="confirmPassword2"
-              value={confirmPassword}
-              onChange={onChange}
-              disabled={loading}
-              autoComplete="new-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ 
-                mt: 3, 
-                mb: 2, 
-                bgcolor: '#00A86B', 
-                '&:hover': { 
-                  bgcolor: '#008f5a' 
-                }
-              }}
-              disabled={loading}
-            >
-              {loading ? <CircularProgress size={24} color="inherit" /> : 'Sign Up'}
-            </Button>
-            <Box sx={{ textAlign: 'center', mt: 2 }}>
-              <Link
-                component="button"
-                variant="body2"
-                onClick={() => navigate('/login')}
-                sx={{
-                  color: '#00A86B',
-                  '&:hover': {
-                    backgroundColor: 'transparent',
-                    color: '#002d62',
-                  },
-                }}
-                disabled={loading}
-              >
-                Already have an account? Login
-              </Link>
-            </Box>
-          </Box>
-        </Paper>
+      {error && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      )}
+
+      <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          id="name"
+          label="Name"
+          name="name"
+          autoFocus
+          value={name}
+          onChange={onChange}
+          disabled={loading}
+          autoComplete="name"
+        />
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          id="email"
+          label="Email Address"
+          name="email"
+          autoComplete="email"
+          value={email}
+          onChange={onChange}
+          disabled={loading}
+          type="email"
+        />
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          name="password"
+          label="Password"
+          type="password"
+          id="password"
+          value={password}
+          onChange={onChange}
+          disabled={loading}
+          autoComplete="new-password"
+        />
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          name="confirmPassword"
+          label="Confirm Password"
+          type="password"
+          id="confirmPassword2"
+          value={confirmPassword}
+          onChange={onChange}
+          disabled={loading}
+          autoComplete="new-password"
+        />
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{ 
+            mt: 3, 
+            mb: 2, 
+            bgcolor: '#00A86B', 
+            '&:hover': { 
+              bgcolor: '#008f5a' 
+            }
+          }}
+          disabled={loading}
+        >
+          {loading ? <CircularProgress size={24} color="inherit" /> : 'Sign Up'}
+        </Button>
+        <Box sx={{ textAlign: 'center', mt: 2 }}>
+          <Link
+            component="button"
+            variant="body2"
+            onClick={() => navigate('/login')}
+            sx={{
+              color: '#00A86B',
+              '&:hover': {
+                backgroundColor: 'transparent',
+                color: '#002d62',
+              },
+            }}
+            disabled={loading}
+          >
+            Already have an account? Login
+          </Link>
+        </Box>
       </Box>
-    </Container>
+    </Paper>
+  </Box>
+</Container>
+
+
             
         </div>
     );

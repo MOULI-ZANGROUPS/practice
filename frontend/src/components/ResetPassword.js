@@ -66,76 +66,80 @@ const ResetPassword = () => {
                 <img src={logo} alt="logo" />
             </div>
             <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Paper elevation={3} sx={{ p: 4, width: '100%' }}>
-          <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: 3 }}>
-            Reset Password
-          </Typography>
-          
-          {error && (
-            <Alert severity="error" sx={{ mb: 2 }}>
-              {error}
-            </Alert>
-          )}
-          
-          {success && <p style={{ color: 'green' }}>{success}</p>}
+  <Box
+    sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: { xs: '0 20px', sm: '0' },
+      mt: 7, // Top margin for spacing
+    }}
+  >
+    <Paper elevation={3} sx={{ p: 4, width: '100%', maxWidth: '400px' }}>
+      <Typography component="h1" variant="h5" sx={{ textAlign: 'center', mb: 3 }}>
+        Reset Password
+      </Typography>
 
-          <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
-            
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              disabled={loading}
-              autoComplete="new-password"
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="confirmPassword"
-              label="Confirm Password"
-              type="password"
-              id="confirmPassword2"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              disabled={loading}
-              autoComplete="new-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ 
-                mt: 3, 
-                mb: 2, 
-                bgcolor: '#00A86B', 
-                '&:hover': { 
-                  bgcolor: '#008f5a' 
-                }
-              }}
-              disabled={loading}
-            >
-              {loading ? <CircularProgress size={24} color="inherit" /> : 'Reset Password'}
-            </Button>
-            
-          </Box>
-        </Paper>
+      {error && (
+        <Alert severity="error" sx={{ mb: 2 }}>
+          {error}
+        </Alert>
+      )}
+
+      {success && (
+        <Typography sx={{ color: 'green', textAlign: 'center', mb: 2 }}>
+          {success}
+        </Typography>
+      )}
+
+      <Box component="form" onSubmit={onSubmit} sx={{ mt: 1 }}>
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          name="password"
+          label="Password"
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          disabled={loading}
+          autoComplete="new-password"
+        />
+        <TextField
+          margin="normal"
+          required
+          fullWidth
+          name="confirmPassword"
+          label="Confirm Password"
+          type="password"
+          id="confirmPassword2"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          disabled={loading}
+          autoComplete="new-password"
+        />
+        
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          sx={{
+            mt: 3,
+            mb: 2,
+            bgcolor: '#00A86B',
+            '&:hover': { bgcolor: '#008f5a' },
+          }}
+          disabled={loading}
+        >
+          {loading ? <CircularProgress size={24} color="inherit" /> : 'Reset Password'}
+        </Button>
       </Box>
-    </Container>
+    </Paper>
+  </Box>
+</Container>
+
         </div>
     );
 };

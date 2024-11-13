@@ -64,7 +64,7 @@ export default function Design() {
             <p>{stock.symbol}</p>
           </div>
         </div>
-        <div className="stock-price">
+        <div className="stock-price1">
           <p>{stock.price}</p>
         </div>
         <div className="stock-compliance">
