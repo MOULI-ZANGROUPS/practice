@@ -9,7 +9,7 @@ body {
 
 .header {
   display: flex;
-  
+  justify-content: space-between;
   align-items: center;
   height: 100px;
   background-color: #003366;
@@ -39,6 +39,8 @@ body {
   display: flex;
   flex-grow: 1;
   gap: 20px;
+  justify-content: flex-end;
+  
 }
 
 .login,
@@ -129,8 +131,6 @@ body {
 
 .stock-price1 p {
   margin: 0;
-
- 
 }
 
 .stock-compliance {
@@ -146,10 +146,10 @@ body {
   color: #4CAF50;
 }
 
-.compliance-rating {
+/* .compliance-rating {
   color: #f4c542;
   font-size: 14px;
-}
+} */
 
 .upgrade-lock {
   text-align: center;
@@ -257,7 +257,7 @@ body {
 }
   
 @media (max-width: 480px) {
-  
+
   .login,
   .signup {
     padding: 6px 12px;

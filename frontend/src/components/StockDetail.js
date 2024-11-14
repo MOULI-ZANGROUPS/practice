@@ -133,7 +133,7 @@ const StockDetail=() => {
       <br />
       {stockData && (
         <>
-          <h1>{stockData.symbol} Details</h1>
+          <h1>{stockData.symbol} </h1>
           <div className="stock-grid">
             <div className="stock-item">
               <div className="label">Open</div>
@@ -191,7 +191,7 @@ const StockDetail=() => {
                 </button>
               ))}
             </div>
-            <div style={{ width: '700px', height: '300px' }}>
+            <div className='chart'>
             {niftyData ? (
               <Line data={niftyData} options={{
                 scales: {

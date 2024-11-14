@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { getUserData } from '../api/auth';
-import '../dashboard.css'; // Import the CSS file
+import '../dashboard.css'; 
 import { useNavigate, Link } from 'react-router-dom';
 import account from '../images/account-icon.svg';
 import logout from '../images/logout.svg';
@@ -8,7 +8,7 @@ import logo from '../images/shariastock logo.png'
 
 const Header = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false); // For user profile dropdown
-  
+  // const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState({});
   const navigate = useNavigate(); 
   
@@ -24,6 +24,8 @@ const Header = () => {
       fetchData();
     }
   }, [email]);
+
+  // const toggleDropdown = () => setIsOpen(!isOpen);
 
   const toggleDropdown = () => {
     setDropdownOpen((prev) => !prev);
@@ -41,7 +43,7 @@ const Header = () => {
         <div className="header-icons">
           <img src={logo} alt="logo" className="logo" onClick={() => navigate('/Dashboard')}/>
         </div>
-        <div className="header-button">
+        <div className="header-button1" >
           <button onClick={() => navigate('/portfolio')} className="portfolio">
             Portfolio
           </button>
@@ -51,8 +53,9 @@ const Header = () => {
         </div>
         <div className="user-icon" onClick={toggleDropdown}>
           <img src={user.profilePicture ? `http://localhost:5000/${user.profilePicture}` : account} alt="Profile" className="profile-pic" /> {/* Profile Picture */}
+
           <div className='user-info'>
-          <p>{user.name}</p>
+          {/* <p>{user.name}</p> */}
           </div>
           
         </div>
@@ -72,6 +75,23 @@ const Header = () => {
           <Link to="/editprofile"><strong>Profile</strong></Link>
           </div>
           
+          <div className="header-button2" >
+         <div className='portfolio-dropdown'>
+         <i className="fa-solid fa-check" ></i>
+         <strong onClick={() => navigate('/portfolio')} className="portfolio1">
+            Portfolio
+          </strong>
+         </div>
+         <div className='portfolio-dropdown'>
+          <i className="fa-solid fa-star"></i>
+         <strong onClick={() => navigate('/watchlist')} className="watchlist1">
+            Watchlist
+          </strong>
+         </div>
+          
+        </div>
+
+
           <div className='logout-section'>
             <img src={logout} alt="logout" />
           <button className="logout-btn" onClick={handleLogout}>Logout</button>

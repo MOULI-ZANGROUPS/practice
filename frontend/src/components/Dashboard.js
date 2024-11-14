@@ -5,6 +5,40 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { getUserData } from '../api/auth';
+import adani from '../images/adani logo.jpg';
+import airtel from '../images/airtel logo.png';
+import bfinserv from '../images/bfinserv logo.png';
+import britania from '../images/britannia logo.jpg';
+import cipla from '../images/cipla logo.png';
+import reddy from '../images/Dr.reddy logo.jpg';
+import grasim from '../images/Grasim logo.jpg';
+import hdfc from '../images/hdfc logo.png';
+import hero from '../images/hero logo.jpg';
+import hindustan from '../images/hindustan logo.jpg';
+import icici from '../images/ICICI logo.jpg';
+import itc from '../images/ITC logo.jpg';
+import kotak from '../images/kotak logo.jpg';
+import lt from '../images/L&T logo.jpg';
+import mahindra from '../images/mahindra logo.jpg';
+import maruti from '../images/maruti logo.png';
+import nestle from '../images/nestle logo.jpg';
+import ntpc from '../images/ntpc logo.png';
+import ongc from '../images/ONGC logo.jpg';
+import powergrid from '../images/powergrid logo.png';
+import reliance from '../images/reliance logo.jpg';
+import sun from '../images/sun logo.jpg';
+import tata from '../images/Tata loog.png';
+import tcs from '../images/tcs logo.png';
+import techmahindra from '../images/techmahindra logo.png';
+import titan from '../images/titan logo.png';
+import ultratech from '../images/UltraTech logo.jpg';
+import wipro from '../images/wipro logo.png';
+import infosys from '../images/infosys-logo.jpg';
+import bajaj from '../images/Bajaj-logo.jpg';
+import sbi from '../images/sbi-logo.jpg';
+import hcl from '../images/hcl_technologies-logo.png';
+import axis from '../images/Axis-logo.jpg';
+import asian from '../images/asian-paints-logo.png';
 
 
 const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
@@ -22,61 +56,61 @@ const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
   const email = localStorage.getItem('userEmail');
 
   const companies = [
-    { symbol: "RELIANCE.NSE", name: "Reliance Industries Ltd" },
-    { symbol: "TCS.NSE", name: "Tata Consultancy Services Ltd" },
-    { symbol: "INFY.NSE", name: "Infosys Ltd" },
-    { symbol: "HDFCBANK.NSE", name: "HDFC Bank Ltd" },
-    { symbol: "ICICIBANK.NSE", name: "ICICI Bank Ltd" },
-    { symbol: "HINDUNILVR.NSE", name: "Hindustan Unilever Ltd" },
-    { symbol: "BAJFINANCE.NSE", name: "Bajaj Finance Ltd" },
-    { symbol: "KOTAKBANK.NSE", name: "Kotak Mahindra Bank Ltd" },
-    { symbol: "LT.NSE", name: "Larsen & Toubro Ltd" },
-    { symbol: "HCLTECH.NSE", name: "HCL Technologies Ltd" },
-    { symbol: "SBIN.NSE", name: "State Bank of India" },
-    { symbol: "ASIANPAINT.NSE", name: "Asian Paints Ltd" },
-    { symbol: "ITC.NSE", name: "ITC Ltd" },
-    { symbol: "BHARTIARTL.NSE", name: "Bharti Airtel Ltd" },
-    { symbol: "AXISBANK.NSE", name: "Axis Bank Ltd" },
-    { symbol: "MARUTI.NSE", name: "Maruti Suzuki India Ltd" },
-    { symbol: "WIPRO.NSE", name: "Wipro Ltd" },
-    { symbol: "ULTRACEMCO.NSE", name: "UltraTech Cement Ltd" },
-    { symbol: "ONGC.NSE", name: "Oil & Natural Gas Corporation Ltd" },
-    { symbol: "TITAN.NSE", name: "Titan Company Ltd" },
-    { symbol: "DRREDDY.NSE", name: "Dr. Reddy's Laboratories Ltd" },
-    { symbol: "ADANIENT.NSE", name: "Adani Enterprises Ltd" },
-    { symbol: "SUNPHARMA.NSE", name: "Sun Pharmaceutical Industries Ltd" },
-    { symbol: "POWERGRID.NSE", name: "Power Grid Corporation of India Ltd" },
-    { symbol: "M&M.NSE", name: "Mahindra & Mahindra Ltd" },
-    { symbol: "NTPC.NSE", name: "NTPC Ltd" },
-    { symbol: "TATASTEEL.NSE", name: "Tata Steel Ltd" },
-    { symbol: "BAJAJFINSV.NSE", name: "Bajaj Finserv Ltd" },
-    { symbol: "HEROMOTOCO.NSE", name: "Hero MotoCorp Ltd" },
-    { symbol: "GRASIM.NSE", name: "Grasim Industries Ltd" },
-    { symbol: "CIPLA.NSE", name: "Cipla Ltd" },
-    { symbol: "COALINDIA.NSE", name: "Coal India Ltd" },
-    { symbol: "NESTLEIND.NSE", name: "Nestle India Ltd" },
-    { symbol: "BRITANNIA.NSE", name: "Britannia Industries Ltd" },
-    { symbol: "TECHM.NSE", name: "Tech Mahindra Ltd" },
-    { symbol: "HDFC.NSE", name: "Housing Development Finance Corporation Ltd" },
-    { symbol: "DIVISLAB.NSE", name: "Divi's Laboratories Ltd" },
-    { symbol: "HINDALCO.NSE", name: "Hindalco Industries Ltd" },
-    { symbol: "JSWSTEEL.NSE", name: "JSW Steel Ltd" },
-    { symbol: "BPCL.NSE", name: "Bharat Petroleum Corporation Ltd" },
-    { symbol: "EICHERMOT.NSE", name: "Eicher Motors Ltd" },
-    { symbol: "ADANIPORTS.NSE", name: "Adani Ports & SEZ Ltd" },
-    { symbol: "SHREECEM.NSE", name: "Shree Cement Ltd" },
-    { symbol: "INDUSINDBK.NSE", name: "IndusInd Bank Ltd" },
-    { symbol: "UPL.NSE", name: "UPL Ltd" },
-    { symbol: "TATAMOTORS.NSE", name: "Tata Motors Ltd" },
-    { symbol: "DABUR.NSE", name: "Dabur India Ltd" },
-    { symbol: "VEDL.NSE", name: "Vedanta Ltd" },
-    { symbol: "GAIL.NSE", name: "GAIL (India) Ltd" },
-    { symbol: "BOSCHLTD.NSE", name: "Bosch Ltd" },
-    { symbol: "PIDILITIND.NSE", name: "Pidilite Industries Ltd" },
-    { symbol: "HAVELLS.NSE", name: "Havells India Ltd" },
-    { symbol: "SIEMENS.NSE", name: "Siemens Ltd" },
-    { symbol: "AMBUJACEM.NSE", name: "Ambuja Cements Ltd" },
-    { symbol: "DMART.NSE", name: "Avenue Supermarts Ltd" }
+    { symbol: "RELIANCE.NSE", name: "Reliance Industries Ltd" ,logos:`${reliance}`},
+    { symbol: "TCS.NSE", name: "Tata Consultancy Services Ltd" ,logos:`${tcs}`},
+    { symbol: "INFY.NSE", name: "Infosys Ltd" ,logos:`${infosys}`},
+    { symbol: "HDFCBANK.NSE", name: "HDFC Bank Ltd" ,logos:`${hdfc}`},
+    { symbol: "ICICIBANK.NSE", name: "ICICI Bank Ltd" ,logos:`${icici}`},
+    { symbol: "HINDUNILVR.NSE", name: "Hindustan Unilever Ltd" ,logos:`${hindustan}`},
+    { symbol: "BAJFINANCE.NSE", name: "Bajaj Finance Ltd" ,logos:`${bajaj}`},
+    { symbol: "KOTAKBANK.NSE", name: "Kotak Mahindra Bank Ltd" ,logos:`${kotak}`},
+    { symbol: "LT.NSE", name: "Larsen & Toubro Ltd" ,logos:`${lt}`},
+    { symbol: "HCLTECH.NSE", name: "HCL Technologies Ltd" ,logos:`${hcl}`},
+    { symbol: "SBIN.NSE", name: "State Bank of India" ,logos:`${sbi}`},
+    { symbol: "ASIANPAINT.NSE", name: "Asian Paints Ltd" ,logos:`${asian}`},
+    { symbol: "ITC.NSE", name: "ITC Ltd" ,logos:`${itc}`},
+    { symbol: "BHARTIARTL.NSE", name: "Bharti Airtel Ltd" ,logos:`${airtel}`},
+    { symbol: "AXISBANK.NSE", name: "Axis Bank Ltd" ,logos:`${axis}`},
+    { symbol: "MARUTI.NSE", name: "Maruti Suzuki India Ltd" ,logos:`${maruti}`},
+    { symbol: "WIPRO.NSE", name: "Wipro Ltd" ,logos:`${wipro}`},
+    { symbol: "ULTRACEMCO.NSE", name: "UltraTech Cement Ltd" ,logos:`${ultratech}`},
+    { symbol: "ONGC.NSE", name: "Oil & Natural Gas Corporation Ltd" ,logos:`${ongc}`},
+    { symbol: "TITAN.NSE", name: "Titan Company Ltd" ,logos:`${titan}`},
+    { symbol: "DRREDDY.NSE", name: "Dr. Reddy's Laboratories Ltd" ,logos:`${reddy}`},
+    { symbol: "ADANIENT.NSE", name: "Adani Enterprises Ltd" ,logos:`${adani}`},
+    { symbol: "SUNPHARMA.NSE", name: "Sun Pharmaceutical Industries Ltd" ,logos:`${sun}`},
+    { symbol: "POWERGRID.NSE", name: "Power Grid Corporation of India Ltd" ,logos:`${powergrid}`},
+    { symbol: "M&M.NSE", name: "Mahindra & Mahindra Ltd" ,logos:`${mahindra}`},
+    { symbol: "NTPC.NSE", name: "NTPC Ltd" ,logos:`${ntpc}`},
+    { symbol: "TATASTEEL.NSE", name: "Tata Steel Ltd" ,logos:`${tata}`},
+    { symbol: "BAJAJFINSV.NSE", name: "Bajaj Finserv Ltd" ,logos:`${bfinserv}`},
+    { symbol: "HEROMOTOCO.NSE", name: "Hero MotoCorp Ltd" ,logos:`${hero}`},
+    { symbol: "GRASIM.NSE", name: "Grasim Industries Ltd" ,logos:`${grasim}`},
+    { symbol: "CIPLA.NSE", name: "Cipla Ltd" ,logos:`${cipla}`},
+    // { symbol: "COALINDIA.NSE", name: "Coal India Ltd" ,companylogo:},
+    { symbol: "NESTLEIND.NSE", name: "Nestle India Ltd" ,logos:`${nestle}`},
+    { symbol: "BRITANNIA.NSE", name: "Britannia Industries Ltd" ,logos:`${britania}`},
+    { symbol: "TECHM.NSE", name: "Tech Mahindra Ltd" ,logos:`${techmahindra}`},
+    // { symbol: "HDFC.NSE", name: "Housing Development Finance Corporation Ltd" },
+    // { symbol: "DIVISLAB.NSE", name: "Divi's Laboratories Ltd" },
+    // { symbol: "HINDALCO.NSE", name: "Hindalco Industries Ltd" },
+    // { symbol: "JSWSTEEL.NSE", name: "JSW Steel Ltd" },
+    // { symbol: "BPCL.NSE", name: "Bharat Petroleum Corporation Ltd" },
+    // { symbol: "EICHERMOT.NSE", name: "Eicher Motors Ltd" },
+    // { symbol: "ADANIPORTS.NSE", name: "Adani Ports & SEZ Ltd" },
+    // { symbol: "SHREECEM.NSE", name: "Shree Cement Ltd" },
+    // { symbol: "INDUSINDBK.NSE", name: "IndusInd Bank Ltd" },
+    // { symbol: "UPL.NSE", name: "UPL Ltd" },
+    // { symbol: "TATAMOTORS.NSE", name: "Tata Motors Ltd" },
+    // { symbol: "DABUR.NSE", name: "Dabur India Ltd" },
+    // { symbol: "VEDL.NSE", name: "Vedanta Ltd" },
+    // { symbol: "GAIL.NSE", name: "GAIL (India) Ltd" },
+    // { symbol: "BOSCHLTD.NSE", name: "Bosch Ltd" },
+    // { symbol: "PIDILITIND.NSE", name: "Pidilite Industries Ltd" },
+    // { symbol: "HAVELLS.NSE", name: "Havells India Ltd" },
+    // { symbol: "SIEMENS.NSE", name: "Siemens Ltd" },
+    // { symbol: "AMBUJACEM.NSE", name: "Ambuja Cements Ltd" },
+    // { symbol: "DMART.NSE", name: "Avenue Supermarts Ltd" }
   ];
   
   useEffect(() => {
@@ -151,7 +185,7 @@ const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
     setSearchSymbol(symbol.replace('.NSE', '')); 
     setSuggestions([]);
     console.log(symbol, name)
-    //navigate(`/stock/${symbol}`, { state: { name } }); // Navigate to stock detail page
+    // navigate(`/stock/${symbol}`, { state: { name,logos } }); // Navigate to stock detail page
   };
 
   const handleAddToPortfolio = async () => {
@@ -243,7 +277,9 @@ const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
         {suggestions.length > 0 && (
           <ul className="suggestions">
             {suggestions.map((company, index) => (
+              
               <li key={index} className="suggestion-item" onClick={() => handleSuggestionClick(company.symbol, company.name)}>
+                 <img src={company.logos} alt={`${company.name} logos`} className="company-logo" />
                 {company.symbol.replace('.NSE', '')} - {company.name}
               </li>
             ))}

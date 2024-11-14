@@ -5,54 +5,17 @@ body {
     font-family: "Noto Sans", sans-serif;
   }
   
-  
-  
-  .stock-portfolio,.stock-watchlist {
-    color: white;
-    font-size: 1.5rem;
-  }
-  
-  .portfolio-topics,.watchlist-topics {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin-top: 10px;
-    margin-left: 50px;
-  }
-  
-  .portfolio-headings,.watchlist-headings {
-    color: white;
-    font-size: 1rem;
-  }
-  
-  .portfolio-headings:hover,
-  .watchlist-headings:hover {
-    color: gold;
-    cursor: pointer;
-  }
-  
-  .icon {
-    color: White;
-    font-size: medium;
-    margin-top: 5px;
-  }
-  
-  .icon:hover {
-    color: gold;
-    cursor: pointer;
-  }
-  
   .portfolio-container, .watchlist-container {
     padding: 20px;
     text-align: center;
     align-items: center;
     background-color: #f9f9f9;
-    width: 100%;
+    /* width: 100%; */
   }
   
   .portfolio-table,
   .watchlist-table {
-    width: 80%;
+    /* width: 60%; */
     border-collapse: collapse;
     margin: 20px auto; /* Center the table */
     border: 1px solid #ddd;
@@ -81,3 +44,88 @@ body {
     text-align: center; /* Center text in table cells */
   }
   
+
+  @media (max-width:646px){
+    .portfolio-table-header,
+  .watchlist-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: small;
+  }
+
+  .portfolio-stock-symbol,
+  .watchlist-symbol,
+  .portfolio-stock-price,
+  .watchlist-price,
+  .portfolio-stock-change,
+  .watchlist-change,
+  .portfolio-stock-changepercent,
+  .watchlist-change-percent,
+  .portfolio-stock-lastupdated,
+  .watchlist-last-updated {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center; /* Center text in table cells */
+    font-size: small;
+  }
+  }
+
+  @media (max-width:503px){
+    .portfolio-table-header,
+  .watchlist-header {
+    background-color: #f4f4f4;
+    padding: 7px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: x-small;
+  }
+
+  .portfolio-stock-symbol,
+  .watchlist-symbol,
+  .portfolio-stock-price,
+  .watchlist-price,
+  .portfolio-stock-change,
+  .watchlist-change,
+  .portfolio-stock-changepercent,
+  .watchlist-change-percent,
+  .portfolio-stock-lastupdated,
+  .watchlist-last-updated {
+    padding: 7px;
+    border: 1px solid #ddd;
+    text-align: center; /* Center text in table cells */
+    font-size: x-small;
+  }
+
+  .icon-cell i{
+    font-size: x-small;
+  }
+  }
+
+  @media (max-width:390px){
+    .portfolio-table-header,
+    .watchlist-header {
+      background-color: #f4f4f4;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: xx-small;
+    }
+
+    .portfolio-stock-symbol,
+  .watchlist-symbol,
+  .portfolio-stock-price,
+  .watchlist-price,
+  .portfolio-stock-change,
+  .watchlist-change,
+  .portfolio-stock-changepercent,
+  .watchlist-change-percent,
+  .portfolio-stock-lastupdated,
+  .watchlist-last-updated {
+    padding: 5px;
+    border: 1px solid #ddd;
+    text-align: center; /* Center text in table cells */
+    font-size: xx-small;
+  }
+  }
