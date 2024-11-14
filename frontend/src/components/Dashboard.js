@@ -39,7 +39,25 @@ import sbi from '../images/sbi-logo.jpg';
 import hcl from '../images/hcl_technologies-logo.png';
 import axis from '../images/Axis-logo.jpg';
 import asian from '../images/asian-paints-logo.png';
-
+import ambuja from '../images/ambuja logo.jpg';
+import bharat from '../images/bharat logo.jpg';
+import bosch from '../images/bosch logo.jpg';
+import dabur from '../images/dabur logo.jpg';
+import divi from '../images/divi.jpg';
+import mart from '../images/Dmart logo.jpg';
+import eicher from '../images/eicher.jpg';
+import gail from '../images/gail logo.jpg';
+import havels from '../images/havels logo.jpg';
+import hindalco from '../images/hindalco logo.jpg';
+import indusind from '../images/indusind.jpg';
+import jsw from '../images/jsw logo.jpg';
+import motors from '../images/motors logo.jpg';
+import pidilite from '../images/pidilite logo.jpg';
+import sez from '../images/sez.jpg';
+import shree from '../images/shree logo.jpg';
+import simens from '../images/Siemens logo.png';
+import upl from '../images/upl.jpg';
+import vedanta from '../images/vedanta logo.jpg';
 
 const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
   const [searchSymbol, setSearchSymbol] = useState('');
@@ -91,26 +109,26 @@ const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
     { symbol: "NESTLEIND.NSE", name: "Nestle India Ltd" ,logos:`${nestle}`},
     { symbol: "BRITANNIA.NSE", name: "Britannia Industries Ltd" ,logos:`${britania}`},
     { symbol: "TECHM.NSE", name: "Tech Mahindra Ltd" ,logos:`${techmahindra}`},
-    // { symbol: "HDFC.NSE", name: "Housing Development Finance Corporation Ltd" },
-    // { symbol: "DIVISLAB.NSE", name: "Divi's Laboratories Ltd" },
-    // { symbol: "HINDALCO.NSE", name: "Hindalco Industries Ltd" },
-    // { symbol: "JSWSTEEL.NSE", name: "JSW Steel Ltd" },
-    // { symbol: "BPCL.NSE", name: "Bharat Petroleum Corporation Ltd" },
-    // { symbol: "EICHERMOT.NSE", name: "Eicher Motors Ltd" },
-    // { symbol: "ADANIPORTS.NSE", name: "Adani Ports & SEZ Ltd" },
-    // { symbol: "SHREECEM.NSE", name: "Shree Cement Ltd" },
-    // { symbol: "INDUSINDBK.NSE", name: "IndusInd Bank Ltd" },
-    // { symbol: "UPL.NSE", name: "UPL Ltd" },
-    // { symbol: "TATAMOTORS.NSE", name: "Tata Motors Ltd" },
-    // { symbol: "DABUR.NSE", name: "Dabur India Ltd" },
-    // { symbol: "VEDL.NSE", name: "Vedanta Ltd" },
-    // { symbol: "GAIL.NSE", name: "GAIL (India) Ltd" },
-    // { symbol: "BOSCHLTD.NSE", name: "Bosch Ltd" },
-    // { symbol: "PIDILITIND.NSE", name: "Pidilite Industries Ltd" },
-    // { symbol: "HAVELLS.NSE", name: "Havells India Ltd" },
-    // { symbol: "SIEMENS.NSE", name: "Siemens Ltd" },
-    // { symbol: "AMBUJACEM.NSE", name: "Ambuja Cements Ltd" },
-    // { symbol: "DMART.NSE", name: "Avenue Supermarts Ltd" }
+    // { symbol: "HDFC.NSE", name: "Housing Development Finance Corporation Ltd" , logos:`${}`},
+    { symbol: "DIVISLAB.NSE", name: "Divi's Laboratories Ltd", logos:`${divi}`},
+    { symbol: "HINDALCO.NSE", name: "Hindalco Industries Ltd", logos:`${hindalco}`},
+    { symbol: "JSWSTEEL.NSE", name: "JSW Steel Ltd", logos:`${jsw}`},
+    { symbol: "BPCL.NSE", name: "Bharat Petroleum Corporation Ltd" , logos:`${bharat}`},
+    { symbol: "EICHERMOT.NSE", name: "Eicher Motors Ltd" , logos:`${eicher}`},
+    { symbol: "ADANIPORTS.NSE", name: "Adani Ports & SEZ Ltd" , logos:`${sez}`},
+    { symbol: "SHREECEM.NSE", name: "Shree Cement Ltd" , logos:`${shree}`},
+    { symbol: "INDUSINDBK.NSE", name: "IndusInd Bank Ltd", logos:`${indusind}`},
+    { symbol: "UPL.NSE", name: "UPL Ltd", logos:`${upl}`},
+    { symbol: "TATAMOTORS.NSE", name: "Tata Motors Ltd" , logos:`${motors}`},
+    { symbol: "DABUR.NSE", name: "Dabur India Ltd" , logos:`${dabur}`},
+    { symbol: "VEDL.NSE", name: "Vedanta Ltd" , logos:`${vedanta}`},
+    { symbol: "GAIL.NSE", name: "GAIL (India) Ltd", logos:`${gail}`},
+    { symbol: "BOSCHLTD.NSE", name: "Bosch Ltd" , logos:`${bosch}`},
+    { symbol: "PIDILITIND.NSE", name: "Pidilite Industries Ltd", logos:`${pidilite}`},
+    { symbol: "HAVELLS.NSE", name: "Havells India Ltd" ,logos:`${havels}`}, 
+    { symbol: "SIEMENS.NSE", name: "Siemens Ltd" , logos:`${simens}`},
+    { symbol: "AMBUJACEM.NSE", name: "Ambuja Cements Ltd", logos:`${ambuja}`},
+    { symbol: "DMART.NSE", name: "Avenue Supermarts Ltd" , logos:`${mart}`}
   ];
   
   useEffect(() => {
