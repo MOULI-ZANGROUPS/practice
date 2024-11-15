@@ -6,7 +6,13 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
+.non-halal {
+  background-color: lightcoral; /* Light red background for non-halal */
+}
 
+.halal {
+  background-color: lightgreen; /* Optional: You can add this for Halal stocks */
+}
 .header {
   display: flex;
   justify-content: space-between;
