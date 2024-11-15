@@ -7,12 +7,12 @@ body {
 }
 
 .compliance-badge-halal {
-  background-color: #4CAF50; /* Green for Halal */
+  background-color: #4CAF50; 
   color: white;
 }
 
 .compliance-badge-non-halal {
-  background-color: #FFCDD2; /* Light red for Non-Halal */
+  background-color: #FFCDD2; 
   color: black;
 }
 .header {
