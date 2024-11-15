@@ -94,7 +94,9 @@ export default function Design() {
           showStatus={false}
         >
           <div>
+            <Link to = "/signup">
             <img src={signup} alt="Sign Up" />
+            </Link>
           </div>
           <div>
             <img src={investing} alt="Investing" />
