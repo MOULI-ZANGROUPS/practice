@@ -48,14 +48,10 @@ export default function Design() {
   };
 
  const renderComplianceBadge = (isHalal) => {
-  return (
-    <span
-      className={`compliance-badge ${!isHalal ? 'non-halal' : ''}`}
-    >
-      {isHalal ? 'Halal' : 'Non-Halal'}
-    </span>
-  );
-};
+  const badgeClass = isHalal ? 'compliance-badge-halal' : 'compliance-badge-non-halal';
+  return <span className={`compliance-badge ${badgeClass}`}>{isHalal ? 'Halal' : 'Non-Halal'}</span>;
+}
+
 
 
   const renderStockRow = (stock) => (
