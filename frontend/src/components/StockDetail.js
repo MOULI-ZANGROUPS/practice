@@ -134,7 +134,7 @@ const StockDetail=() => {
       {stockData && (
         <>
           <h1>
-             {logo && <img src={logo} alt={`${name} logo`} style={{ width: '50px', marginRight: '10px' }} />}
+             {logo && <img src={logo} alt={`${name} logo`} style={{ width: '60px',height:'60px',borderRadius:'50%', marginRight: '10px' }} />}
               {stockData.symbol} </h1>
           <div className="stock-grid">
             <div className="stock-item">
