@@ -52,7 +52,7 @@ export default function Design() {
   };
 
   const renderStockRow = (stock) => (
-    <div className="stock-row" key={stock.symbol}>
+    <div className="stock-row" key={stock.symbol}  style={{ backgroundColor: stock.isHalal ? 'transparent' : 'red' }}>
       <div className="stock-name">
         <img src={stock.logo} alt={`${stock.name} logo`} className="stock-logo" />
         <div>
@@ -94,8 +94,8 @@ export default function Design() {
           showStatus={false}
         >
           <div>
-            <Link to = "/signup">
-            <img src={signup} alt="Sign Up" />
+            <Link to="/signup">
+             <img src={signup} alt="Sign Up" />
             </Link>
           </div>
           <div>
