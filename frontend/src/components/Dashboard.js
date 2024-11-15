@@ -268,11 +268,21 @@ const Dashboard = ({ addToPortfolio, addToWatchlist }) => {
     }
   };
 
-  const handleNavigateToStockDetails = (symbol,name) =>{
-    console.log(companies.name)
-    console.log(symbol)
-    navigate(`/stock/${symbol}`, { state: { name } });
-  }
+  // const handleNavigateToStockDetails = (symbol,name) =>{
+  //   console.log(companies.name)
+  //   console.log(symbol)
+  //   navigate(`/stock/${symbol}`, { state: { name } });
+  // }
+
+  const handleNavigateToStockDetails = (symbol) => {
+    const company = companies.find((c) => c.symbol === `${symbol}.NSE`);
+    if (company) {
+      console.log("Navigating to:", company.name, company.symbol);
+      navigate(`/stock/${symbol}`, { state: { name: company.name , logo : company.logos } });
+    } else {
+      console.error(`Company with symbol ${symbol} not found in companies array.`);
+    }
+  };
 
   return (
     <div className="App">
