@@ -59,7 +59,7 @@ export default function Design() {
 
 
   const renderStockRow = (stock) => (
-    <div className="stock-row" key={stock.symbol}  style={{ backgroundColor: isHalal ? 'transparent' : 'red', color: isHalal ? 'inherit' : 'white' }}>
+    <div className="stock-row" key={stock.symbol}>
       <div className="stock-name">
         <img src={stock.logo} alt={`${stock.name} logo`} className="stock-logo" />
         <div>
