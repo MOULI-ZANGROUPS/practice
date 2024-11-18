@@ -19,6 +19,7 @@ const EditProfile = () => {
     });
     const [profilePicture, setProfilePicture] = useState(null);
     const [profilePreview, setProfilePreview] = useState(null);
+    const [errors, setErrors] = useState({});
 
     const email = localStorage.getItem('userEmail');
 
@@ -37,19 +38,36 @@ const EditProfile = () => {
                     pincode: userData.pincode || ''
                 });
                 setProfilePicture(userData.profilePicture || '');
-                setProfilePreview(userData.profilePicture ? `http://localhost:5000/${userData.profilePicture}` : account);
+                setProfilePreview(userData.profilePicture ? `${userData.profilePicture}` : account);
             }
         };
         fetchUserData();
     }, [email]);
 
+    const validateField = (name, value) => {
+        switch (name) {
+            case 'doorNumber':
+                return value.length < 1 ? 'Door number is required' : '';
+            case 'streetName':
+                return value.length < 5 ? 'Street name is too short' : '';
+            case 'city':
+                return !/^[A-Za-z\s]+$/.test(value) ? 'Invalid city name' : '';
+            case 'country':
+                return !/^[A-Za-z\s]+$/.test(value) ? 'Invalid country name' : '';
+            case 'pincode':
+                return !/^\d{5,6}$/.test(value) ? 'Invalid pincode' : '';
+            default:
+                return '';
+        }
+    };
+    
     const handleEditClick = () => {
         setIsEditing(true);
     };
 
     const handleCancelClick = () => {
         setIsEditing(false);
-        setProfilePreview(user.profilePicture ? `http://localhost:5000/${user.profilePicture}` : account);
+        setProfilePreview(user.profilePicture ? `${user.profilePicture}` : account);
     };
 
     const handleChange = (e) => {
@@ -57,6 +75,12 @@ const EditProfile = () => {
         setFormData((prevState) => ({
             ...prevState,
             [name]: value
+        }));
+
+        const error = validateField(name, value);
+        setErrors((prevState) => ({
+            ...prevState,
+            [name]: error
         }));
     };
 
@@ -68,21 +92,31 @@ const EditProfile = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await updateUserData(email, formData);
-        if (profilePicture) {
-            const data = new FormData();
-            data.append('profilePicture', profilePicture);
-            data.append('email', email);
-            await uploadProfilePicture(data);
+        const newErrors = {};
+        Object.keys(formData).forEach((key) => {
+            const error = validateField(key, formData[key]);
+            if (error) newErrors[key] = error;
+        });
+
+        if (Object.keys(newErrors).length === 0) {
+            await updateUserData(email, formData);
+            if (profilePicture) {
+                const data = new FormData();
+                data.append('profilePicture', profilePicture);
+                data.append('email', email);
+                await uploadProfilePicture(data);
+            }
+            setIsEditing(false);
+            const updatedUserData = await getUserData(email);
+            setUser(updatedUserData);
+            setProfilePreview(updatedUserData.profilePicture ? `${updatedUserData.profilePicture}` : account);
+        } else {
+            setErrors(newErrors);
         }
-        setIsEditing(false);
-        const updatedUserData = await getUserData(email);
-        setUser(updatedUserData);
-        setProfilePreview(updatedUserData.profilePicture ? `http://localhost:5000/${updatedUserData.profilePicture}` : account);
     };
 
     return (
-        <div>
+       <div>
             <Header />
             <div className="edit-profile-container">
             <h2>Profile</h2>
@@ -96,6 +130,8 @@ const EditProfile = () => {
                             <div>
                             <button onClick={handleEditClick} className="edit-btn">Edit</button>
                             </div>
+                            
+                            
                         </div>
                         <div className="form-fields">
                             <div className="form-field">
@@ -112,7 +148,7 @@ const EditProfile = () => {
                             </div>
                             <div className="form-field">
                                 <label><strong>Address</strong></label>
-                                <p>{`${user.doorNumber || ''}${user.streetName || ''}${user.city || 'Add Address'}${user.country || ''} ${user.pincode || ''}`}</p>
+                                <p>{`${user.doorNumber || ''} ${user.streetName || ''} ${user.city || 'Add Address'} ${user.country || ''} ${user.pincode || ''}`}</p>
                             </div>
 
                         </div>
@@ -121,9 +157,10 @@ const EditProfile = () => {
                 ) : (
                     <form className="profile-edit-form" onSubmit={handleSubmit}>
                         <div className="profile-picture-section">
-                        <div className='profile-preview'>
+                            <div className='profile-preview'>
                             {profilePreview && <img src={profilePreview} alt="Profile Preview" width={100} height={100} />}
                             </div>
+                            
                             <div className='profile-change'>
                             <input 
                                     id="profilePicture" 
@@ -137,9 +174,8 @@ const EditProfile = () => {
                                     Change Image
                                 </label>
                             </div>
+                             
                         </div>
-
-
                         
                         <div className="form-fields">
                             <label>Name</label>
@@ -153,18 +189,23 @@ const EditProfile = () => {
                             
                             <label>Door Number</label>
                             <input type="text" name="doorNumber" value={formData.doorNumber} onChange={handleChange} />
+                            {errors.doorNumber && <p className="error">{errors.doorNumber}</p>}
                             
                             <label>Street Name</label>
                             <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} />
+                            {errors.streetName && <p className="error">{errors.streetName}</p>}
                             
                             <label>City</label>
                             <input type="text" name="city" value={formData.city} onChange={handleChange} />
+                            {errors.city && <p className="error">{errors.city}</p>}
                             
                             <label>Country</label>
                             <input type="text" name="country" value={formData.country} onChange={handleChange} />
+                            {errors.country && <p className="error">{errors.country}</p>}
                             
                             <label>Pincode</label>
                             <input type="text" name="pincode" value={formData.pincode} onChange={handleChange} />
+                            {errors.pincode && <p className="error">{errors.pincode}</p>}
                         </div>
                         
                         <div className="form-actions">
