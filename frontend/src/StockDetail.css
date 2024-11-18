@@ -8,6 +8,11 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+.stock-div{
+  display:flex;
+  flex-direction: row;
+}
+
 .stock-detail-container h1{
   /* font-size: large; */
   margin-left: 20px;
