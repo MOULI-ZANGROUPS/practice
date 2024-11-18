@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
     const isAuthenticated = localStorage.getItem('userEmail');
-    return isAuthenticated ? children : <Navigate to="/signup" />;
+    return isAuthenticated ? children : <Navigate to="/" />;
 };
 
 export default PrivateRoute;
