@@ -42,7 +42,7 @@ const App = () => {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/forgot-password" element={<ForgotPassword />} />
                     <Route path="/reset-password/:token" element={<ResetPassword />} />
-                    {/ Protected Routes /}
+                     
                 <Route
                     path="/dashboard"
                     element={
