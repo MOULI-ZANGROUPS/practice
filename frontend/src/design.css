@@ -6,7 +6,7 @@ body {
   font-family: "Noto Sans", sans-serif;
 }
 
-.compliance-badge-halal {
+/* .compliance-badge-halal {
   background-color: #4CAF50; 
   color: white;
 }
@@ -14,7 +14,7 @@ body {
 .compliance-badge-non-halal {
   background-color: #FFCDD2; 
   color: black;
-}
+} */
 .header {
   display: flex;
   justify-content: space-between;
